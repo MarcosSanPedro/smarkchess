@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { lettersArrey, numbersArrey } from "@/app/states/chessBoard";
+import { lettersArrey, numbersArrey } from "@/app/states/boardSlice";
 import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { selectPiece } from "@/app/states/clickSlice";
@@ -29,7 +29,7 @@ function App() {
         className="
       aspect-square bg-blue-400 border-black border-4 grid grid-cols-8 w-auto h-auto"
       >
-        {lettersArrey.map((letter, index) =>
+        {lettersArrey.map((letter: string, index: number) =>
           numbersArrey.map((number, nIndex) => {
             return (
               <div
