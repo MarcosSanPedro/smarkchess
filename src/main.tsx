@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-
+import { enableMapSet } from "immer";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 
@@ -26,7 +26,7 @@ declare module "@tanstack/react-router" {
     router: typeof router;
   }
 }
-
+enableMapSet();
 // Render the app
 const rootElement = document.getElementById("app");
 if (rootElement && !rootElement.innerHTML) {
