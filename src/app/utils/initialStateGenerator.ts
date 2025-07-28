@@ -12,7 +12,7 @@ export type Position = {
     hasMoved: boolean;
   };
   
-  export function pieceBoardPlacer(): Map<string, Piece> {
+  export function generateInitialState(): Map<string, Piece> {
     const pieces = new Map<string, Piece>();
     const columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     const backRowOrder: Piece["type"][] = [
